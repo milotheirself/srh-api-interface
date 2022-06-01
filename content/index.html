@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!---->
+    <style>
+      html {
+        color-scheme: dark;
+      }
+    </style>
+    <!---->
+
+    <!---->
+    <script src="./assets/lib/index.js" type="module"></script>
+    <!---->
+  </head>
+  <body>
+    <!---->
+    <input node-role="banner:file" type="file" name="file" />
+    <button node-role="banner:save"><span>Upload</span></button><br />
+    <!---->
+
+    <script>
+      const banner = {
+        file: document.querySelector('[node-role="banner:file"]'),
+        save: document.querySelector('[node-role="banner:save"]'),
+
+        // +
+        selected: null,
+
+        // +
+        whenChanged: () => {
+          const { files } = banner.file;
+          banner.selected = null;
+
+          banner.save.disabled = true;
+          if (!files.length) return;
+          if (['image/png'].indexOf(files[0].type) == -1) return;
+
+          banner.selected = files[0];
+          banner.save.disabled = false;
+        },
+
+        // +
+        requestUpload: () => {
+          const reader = new FileReader();
+
+          reader.addEventListener('load', async (eve) => {
+            banner.file.value = null;
+            banner.whenChanged();
+
+            const res = await fetch(`${location.origin}/api/people/80351110224678912`, {
+              method: 'PATCH',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({
+                banner_image: eve.target.result,
+              }),
+            });
+
+            console.log(await res.json());
+          });
+          reader.readAsDataURL(banner.selected);
+        },
+      };
+
+      banner.save.addEventListener('click', banner.requestUpload);
+      banner.file.addEventListener('change', banner.whenChanged);
+      banner.whenChanged();
+    </script>
+  </body>
+</html>
