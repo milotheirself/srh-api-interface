@@ -8,9 +8,11 @@ Der zweite Teil des Projektes dient dazu, Ihre Datenbank in ein Datenbank-Manage
 
 Abschließend wird im dritten Teil des Projektes die Datenbank in die Anwendungs-entwicklung integriert. So lesen Sie z.B. über eine Webseite Daten Ihrer Datenbank aus, oder fügen ihr neue Datensätze hinzu.
 
+<br>
+
 ## Teil 1: Datenbankdesign
 
-Aufgaben –
+### Aufgaben –
 
 1. Erstellen Sie eine Sammlung von Inhalten, die Sie in Ihrer Datenbank abbilden wollen. (z.B. in Form einer Mindmap)
 
@@ -20,7 +22,11 @@ Aufgaben –
 
 4. Notieren Sie Ihre Entitäten in der Relationenschreibweise und markieren die Primärund Fremdschlüssel eindeuti
 
+<br>
+
 ## Teil 2: Erstellen und testen der Datenbankstruktur
+
+### Aufgaben –
 
 1. Erstellen Sie auf Basis Ihres Datenbankmodells eine (leere) Datenbank mit allen
    Tabellen aus Ihrem Modell
@@ -38,12 +44,16 @@ Aufgaben –
 5. Bearbeiten Sie die Aufgabenstellungen, die Sie auf Basis Ihrer Datenbank
    erhalten haben
 
+<br>
+
 ## Teil 3: Einbinden der Datenbank in eine Anwendung
 
 Dieser dritte Teil kann auf verschiedene Arten gelöst werden, wobei der SQL-Anteil oft sehr
 ähnlich gelöst wird, sei es zur Anwendung auf einer Webseite, oder in einem JAVA-/ C#-/
 Python-Programm. Im Anhang sind zwei Beispiele zur Integration in eine „endbenutzerfähige“
 Anwendung beigefügt.
+
+### Aufgaben –
 
 1. Erstellen Sie einen Funktionsaufruf zum Aufbau der Datenbankverbindung.
 
