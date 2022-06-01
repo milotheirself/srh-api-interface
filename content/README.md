@@ -2,15 +2,11 @@
 
 Sie sollen in Einzel- oder Gruppenarbeit eine Datenbank erstellen. Den thematischen Hintergrund der Datenbank können Sie frei wählen. Es kann eine Datenbank für ein „reales“ Einsatzszenario sein, oder auch aus dem Hobbybereich.
 
-Der erste Teil des Projektes behandelt das Datenbankdesign, in dem Sie beginnend von der Grundidee bis hin zu einem fertig modellierten Entity-Relationship-Diagram (ERD) und den Entitäten in Relationenschreibweise Ihre Datenbank beschreiben.
-
-Der zweite Teil des Projektes dient dazu, Ihre Datenbank in ein Datenbank-Management-System (DBMS) umzusetzen und diese im Anschluss mit Testdaten zu befüllen. Zur Überprüfung der korrekten Umsetzung der Modelle und Verknüpfung der abhängigen Daten werden basierend auf Ihren Testdaten, Abfragen erstellt. Weiterhin werden Sie im Zuge des zweiten Teiles Sicherungen Ihrer Datenbank anlegen und mit den Import- und Export-Funktionen des DMBS arbeiten.
-
-Abschließend wird im dritten Teil des Projektes die Datenbank in die Anwendungs-entwicklung integriert. So lesen Sie z.B. über eine Webseite Daten Ihrer Datenbank aus, oder fügen ihr neue Datensätze hinzu.
-
 <br>
 
 ## Teil 1: Datenbankdesign
+
+Der erste Teil des Projektes behandelt das Datenbankdesign, in dem Sie beginnend von der Grundidee bis hin zu einem fertig modellierten Entity-Relationship-Diagram (ERD) und den Entitäten in Relationenschreibweise Ihre Datenbank beschreiben.
 
 ### Aufgaben –
 
@@ -25,6 +21,8 @@ Abschließend wird im dritten Teil des Projektes die Datenbank in die Anwendungs
 <br>
 
 ## Teil 2: Erstellen und testen der Datenbankstruktur
+
+Der zweite Teil des Projektes dient dazu, Ihre Datenbank in ein Datenbank-Management-System (DBMS) umzusetzen und diese im Anschluss mit Testdaten zu befüllen. Zur Überprüfung der korrekten Umsetzung der Modelle und Verknüpfung der abhängigen Daten werden basierend auf Ihren Testdaten, Abfragen erstellt. Weiterhin werden Sie im Zuge des zweiten Teiles Sicherungen Ihrer Datenbank anlegen und mit den Import- und Export-Funktionen des DMBS arbeiten.
 
 ### Aufgaben –
 
