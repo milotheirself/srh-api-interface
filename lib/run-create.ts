@@ -1,11 +1,11 @@
-import { default as database } from './services/database.ts';
+import { default as database } from './worker/database.ts';
 
 import 'https://deno.land/x/dotenv@v3.2.0/load.ts';
 
 database.connectedCallback({
-  hostname: Deno.env.get('DB_HOST'),
-  username: Deno.env.get('DB_SDK_USER'),
-  password: Deno.env.get('DB_SDK_PASS'),
+  hostname: Deno.env.get('DB_HOST') || 'localhost',
+  username: Deno.env.get('DB_SDK_USER') || 'root',
+  password: Deno.env.get('DB_SDK_PASS') || false,
 });
 
 database.whenConnected().then(async () => {

@@ -35,10 +35,10 @@ internal.requestStatic = async ({ loc }: { [prop: string]: any }) => {
   let loa: Uint8Array | null = null;
   let typ = true; //Deno.FileInfo | null = null;
   let fil: string[] = [
-    `lib/public${loc.pathname}`, //
-    `lib/public${loc.pathname}index.html`,
-    `lib/public${loc.pathname}/index.html`,
-    `lib/public/404.html`,
+    `lib/hosted${loc.pathname}`, //
+    `lib/hosted${loc.pathname}index.html`,
+    `lib/hosted${loc.pathname}/index.html`,
+    `lib/hosted/404.html`,
   ];
 
   let mat = 0;

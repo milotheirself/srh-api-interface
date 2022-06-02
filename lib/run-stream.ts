@@ -1,5 +1,5 @@
-import { default as database } from './service/database.ts';
-import { default as streamer } from './service/streamer.ts';
+import { default as database } from './worker/database.ts';
+import { default as streamer } from './worker/streams.ts';
 
 import 'https://raw.githubusercontent.com/daychongyang/dotenv/master/load.ts';
 

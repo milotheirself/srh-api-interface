@@ -1,6 +1,8 @@
 # Dauerprojekt Datenbanken
 
-Sie sollen in Einzel- oder Gruppenarbeit eine Datenbank erstellen. Den thematischen Hintergrund der Datenbank können Sie frei wählen. Es kann eine Datenbank für ein „reales“ Einsatzszenario sein, oder auch aus dem Hobbybereich.
+- [x] [Teil 1: Datenbankdesign](#teil-1-datenbankdesign)
+- [ ] [Teil 2: Erstellen und testen der Datenbankstruktur](#teil-2-erstellen-und-testen-der-datenbankstruktur)
+- [ ] [Teil 3: Einbinden der Datenbank in eine Anwendung](#teil-3-einbinden-der-datenbank-in-eine-anwendung)
 
 <br>
 
@@ -8,7 +10,7 @@ Sie sollen in Einzel- oder Gruppenarbeit eine Datenbank erstellen. Den thematisc
 
 Der erste Teil des Projektes behandelt das Datenbankdesign, in dem Sie beginnend von der Grundidee bis hin zu einem fertig modellierten Entity-Relationship-Diagram (ERD) und den Entitäten in Relationenschreibweise Ihre Datenbank beschreiben.
 
-### Aufgaben –
+### Aufgaben
 
 1. Erstellen Sie eine Sammlung von Inhalten, die Sie in Ihrer Datenbank abbilden wollen. (z.B. in Form einer Mindmap)
 
@@ -18,13 +20,19 @@ Der erste Teil des Projektes behandelt das Datenbankdesign, in dem Sie beginnend
 
 4. Notieren Sie Ihre Entitäten in der Relationenschreibweise und markieren die Primärund Fremdschlüssel eindeuti
 
+### Document
+
+- [x] [Sammlung von Inhalten / Grundkonzeption](./Teil%201/README.md#sammlung-von-inhalten--grundkonzeption)
+- [x] [Entity Relationship Diagram (ERM)](./Teil%201/README.md#entity-relationship-diagram-erm)
+- [x] [Relationenschreibweise](./Teil%201/README.md#relationenschreibweise)
+
 <br>
 
 ## Teil 2: Erstellen und testen der Datenbankstruktur
 
 Der zweite Teil des Projektes dient dazu, Ihre Datenbank in ein Datenbank-Management-System (DBMS) umzusetzen und diese im Anschluss mit Testdaten zu befüllen. Zur Überprüfung der korrekten Umsetzung der Modelle und Verknüpfung der abhängigen Daten werden basierend auf Ihren Testdaten, Abfragen erstellt. Weiterhin werden Sie im Zuge des zweiten Teiles Sicherungen Ihrer Datenbank anlegen und mit den Import- und Export-Funktionen des DMBS arbeiten.
 
-### Aufgaben –
+### Aufgaben
 
 1. Erstellen Sie auf Basis Ihres Datenbankmodells eine (leere) Datenbank mit allen
    Tabellen aus Ihrem Modell
@@ -42,6 +50,11 @@ Der zweite Teil des Projektes dient dazu, Ihre Datenbank in ein Datenbank-Manage
 5. Bearbeiten Sie die Aufgabenstellungen, die Sie auf Basis Ihrer Datenbank
    erhalten haben
 
+### Document
+
+- [x] [Datenbank nach ERM, mit Beispieldaten](#)
+- [ ] Bearbeitung der Aufgabenstellungen
+
 <br>
 
 ## Teil 3: Einbinden der Datenbank in eine Anwendung
@@ -51,7 +64,7 @@ Dieser dritte Teil kann auf verschiedene Arten gelöst werden, wobei der SQL-Ant
 Python-Programm. Im Anhang sind zwei Beispiele zur Integration in eine „endbenutzerfähige“
 Anwendung beigefügt.
 
-### Aufgaben –
+### Aufgaben
 
 1. Erstellen Sie einen Funktionsaufruf zum Aufbau der Datenbankverbindung.
 
@@ -65,3 +78,7 @@ Anwendung beigefügt.
 4. Erstellen Sie eine Ansicht, über die Sie Inhalte der Datenbank anzeigen lassen
    können. Implementieren Sie auch eine Selektion nach einem Suchbegriff, oder nach
    Kategorien.
+
+### Document
+
+- [ ] Implementierung
