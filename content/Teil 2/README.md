@@ -1,1 +1,1 @@
-[← Datenbanken](../README.md#Dauerprojekt-Datenbanken)
+[← Dauerprojekt Datenbanken](../README.md#dauerprojekt-datenbanken)
