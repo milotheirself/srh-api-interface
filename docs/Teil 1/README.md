@@ -1,7 +1,5 @@
 [← Dauerprojekt Datenbanken](../README.md#dauerprojekt-datenbanken)
 
-# Teil 1: Databasedesign
-
 ## Content examples and project objective
 
 The database is intended to be a simple profile manager in the form of a local web server and API, in which users can edit profile elements via a simple interface. Since it is only about writing and reading data, this does not involve any form of security. Anyone can read and write any data.
