@@ -113,6 +113,72 @@ Response with 404 document; when request is invalid –
 
 ![designer](./assets/163166673-e31e3a55-053f-4290-95bf-999d18479dcb.png)
 
-# Relationenschreibweise
+<br>
 
-[...]
+# Relations in text notation
+
+#### TABLE_USER_USER
+
+```
+table_user_banner { **id**, username, caption, joined_at, system }
+```
+
+```sql
+CREATE TABLE dauerprojekt_datenbanken.table_user (
+  id          INT               NOT NULL,
+  username    VARCHAR(32)       NOT NULL,
+  caption     VARCHAR(512)      NULL,
+  joined_at   DATE              NOT NULL,
+  system      BOOLEAN           NULL,
+
+  PRIMARY KEY(id)
+);
+```
+
+#### TABLE_USER_FILE
+
+```
+table_user_banner { **hash**, **size**, data }
+```
+
+```sql
+CREATE TABLE dauerprojekt_datenbanken.table_file (
+  hash        VARCHAR(32)       NOT NULL,
+  size        INT               NOT NULL,
+  data        VARBINARY(256)    NOT NULL,
+
+  PRIMARY KEY(hash, size)
+);
+```
+
+#### TABLE_USER_AVATAR
+
+```
+table*user_avatar { \_user*, _file_ }
+```
+
+```sql
+CREATE TABLE dauerprojekt_datenbanken.table_user_avatar (
+  user        INT               NOT NULL,
+  file        VARCHAR(32)       NOT NULL,
+
+  FOREIGN KEY(user) references dauerprojekt_datenbanken.table_user(id),
+  FOREIGN KEY(file) references dauerprojekt_datenbanken.table_file(hash)
+);
+```
+
+#### TABLE_USER_BANNER
+
+```
+table*user_banner { \_user*, _file_ }
+```
+
+```sql
+CREATE TABLE dauerprojekt_datenbanken.table_user_banner (
+  user        INT               NOT NULL,
+  file        VARCHAR(32)       NOT NULL,
+
+  FOREIGN KEY(user) references dauerprojekt_datenbanken.table_user(id),
+  FOREIGN KEY(file) references dauerprojekt_datenbanken.table_file(hash)
+);
+```
