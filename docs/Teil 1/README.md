@@ -109,8 +109,6 @@ Response with 404 document; when request is invalid –
 
 <br>
 
----
-
 # Entity Relationship Diagram (ERM)
 
 ![designer](./assets/163166673-e31e3a55-053f-4290-95bf-999d18479dcb.png)
