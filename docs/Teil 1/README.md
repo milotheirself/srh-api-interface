@@ -119,9 +119,7 @@ Response with 404 document; when request is invalid –
 
 #### TABLE_USER_USER
 
-```
-table_user_banner { **id**, username, caption, joined_at, system }
-```
+> tableUserBanner { **id**, username, caption, joined_at, system }
 
 ```sql
 CREATE TABLE dauerprojekt_datenbanken.table_user (
@@ -137,9 +135,7 @@ CREATE TABLE dauerprojekt_datenbanken.table_user (
 
 #### TABLE_USER_FILE
 
-```
-table_user_banner { **hash**, **size**, data }
-```
+> tableUserBanner { **hash**, **size**, data }
 
 ```sql
 CREATE TABLE dauerprojekt_datenbanken.table_file (
@@ -153,9 +149,7 @@ CREATE TABLE dauerprojekt_datenbanken.table_file (
 
 #### TABLE_USER_AVATAR
 
-```
-table*user_avatar { \_user*, _file_ }
-```
+> tableUserAvatar { _user_, _file_ }
 
 ```sql
 CREATE TABLE dauerprojekt_datenbanken.table_user_avatar (
@@ -169,9 +163,7 @@ CREATE TABLE dauerprojekt_datenbanken.table_user_avatar (
 
 #### TABLE_USER_BANNER
 
-```
-table*user_banner { \_user*, _file_ }
-```
+> tableUserBanner { _user_, _file_ }
 
 ```sql
 CREATE TABLE dauerprojekt_datenbanken.table_user_banner (
