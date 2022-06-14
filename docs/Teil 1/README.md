@@ -1,10 +1,10 @@
 [← Dauerprojekt Datenbanken](../README.md#dauerprojekt-datenbanken)
 
-## Content examples and project objective
+# Content examples and project objective
 
 The database is intended to be a simple profile manager in the form of a local web server and API, in which users can edit profile elements via a simple interface. Since it is only about writing and reading data, this does not involve any form of security. Anyone can read and write any data.
 
-### API / CDN
+## API / CDN
 
 #### API – read database contents
 
@@ -56,7 +56,9 @@ GET /cdn/banner/{file.hash}
 Response with data stream –  
 Response with 404 document; when request is invalid –
 
-### SQL
+<br>
+
+## SQL
 
 #### TABLE_USER
 
@@ -107,10 +109,10 @@ Response with 404 document; when request is invalid –
 
 <br>
 
-## Entity Relationship Diagram (ERM)
+# Entity Relationship Diagram (ERM)
 
 [...]
 
-## Relationenschreibweise
+# Relationenschreibweise
 
 [...]
