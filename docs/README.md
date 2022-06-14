@@ -16,9 +16,9 @@ Der erste Teil des Projektes behandelt das Datenbankdesign, in dem Sie beginnend
 
 ### Document
 
-- [x] [Sammlung von Inhalten / Grundkonzeption](./Teil%201/README.md#content-examples-and-project-objective)
-- [x] [Entity Relationship Diagram (ERM)](./Teil%201/README.md#entity-relationship-diagram-erm)
-- [x] [Relationenschreibweise](./Teil%201/README.md#relationenschreibweise)
+- [x] [Sammlung von Inhalten / Grundkonzeption](./Teil-1/README.md#content-examples-and-project-objective)
+- [x] [Entity Relationship Diagram (ERM)](./Teil-1/README.md#entity-relationship-diagram-erm)
+- [x] [Relationenschreibweise](./Teil-1/README.md#relationenschreibweise)
 
 <br>
 
@@ -46,7 +46,7 @@ Der zweite Teil des Projektes dient dazu, Ihre Datenbank in ein Datenbank-Manage
 
 ### Document
 
-- [x] [Datenbank nach ERM, mit Beispieldaten](#)
+- [x] [Datenbank nach ERM, mit Beispieldaten](./Teil-2/README.md)
 - [ ] Bearbeitung der Aufgabenstellungen
 
 <br>
