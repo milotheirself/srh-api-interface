@@ -1,11 +1,5 @@
 # Dauerprojekt Datenbanken
 
-- [x] [Teil 1: Datenbankdesign](#teil-1-datenbankdesign)
-- [ ] [Teil 2: Erstellen und testen der Datenbankstruktur](#teil-2-erstellen-und-testen-der-datenbankstruktur)
-- [ ] [Teil 3: Einbinden der Datenbank in eine Anwendung](#teil-3-einbinden-der-datenbank-in-eine-anwendung)
-
-<br>
-
 ## Teil 1: Datenbankdesign
 
 Der erste Teil des Projektes behandelt das Datenbankdesign, in dem Sie beginnend von der Grundidee bis hin zu einem fertig modellierten Entity-Relationship-Diagram (ERD) und den Entitäten in Relationenschreibweise Ihre Datenbank beschreiben.
@@ -22,7 +16,7 @@ Der erste Teil des Projektes behandelt das Datenbankdesign, in dem Sie beginnend
 
 ### Document
 
-- [x] [Sammlung von Inhalten / Grundkonzeption](./Teil%201/README.md#sammlung-von-inhalten--grundkonzeption)
+- [x] [Sammlung von Inhalten / Grundkonzeption](./Teil%201/README.md#content-examples-and-project-objective)
 - [x] [Entity Relationship Diagram (ERM)](./Teil%201/README.md#entity-relationship-diagram-erm)
 - [x] [Relationenschreibweise](./Teil%201/README.md#relationenschreibweise)
 

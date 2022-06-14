@@ -1,6 +1,6 @@
 [← Dauerprojekt Datenbanken](../README.md#dauerprojekt-datenbanken)
 
-# Teil 1: Datenbankdesign
+# Teil 1: Databasedesign
 
 ## Content examples and project objective
 
