@@ -42,6 +42,26 @@ Response with JSON message; when request is invalid –
 { "message": "404: Not Found", "code": 0 }
 ```
 
+#### Getting all members of a group:
+
+```
+GET /api/groups/{group.id}/members
+```
+
+Response with JSON –
+
+```json
+{
+  "members": [298726187285348353, 298726222848851970, 298726151784759296]
+}
+```
+
+Response with JSON message; when request is invalid –
+
+```json
+{ "message": "404: Not Found", "code": 0 }
+```
+
 #### Getting information about a specific member:
 
 ```
