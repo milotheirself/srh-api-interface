@@ -6,10 +6,66 @@ The database is intended to be a simple profile manager in the form of a local w
 
 ## API
 
-#### API – read database contents
+#### Getting all groups:
 
-```js
-GET /api/people/{user.id}
+```
+GET /api/groups
+```
+
+Response with JSON –
+
+```json
+{
+  "groups": [953652184124391529, 953652757825462282]
+}
+```
+
+#### Getting information about a specific group:
+
+```
+GET /api/groups/{group.id}
+```
+
+Response with JSON –
+
+```json
+{
+  "id": "953652184124394458",
+  "name": "Aperture Science",
+  "avatar": "46e6b522cbf351c41de1ed1fae9ba3a2"
+}
+```
+
+Response with JSON message; when request is invalid –
+
+```json
+{ "message": "404: Not Found", "code": 0 }
+```
+
+#### Getting all members of a group:
+
+```
+GET /api/groups/{group.id}/members
+```
+
+Response with JSON –
+
+```json
+{
+  "members": [298726187285348353, 298726222848851970, 298726151784759296]
+}
+```
+
+Response with JSON message; when request is invalid –
+
+```json
+{ "message": "404: Not Found", "code": 0 }
+```
+
+#### Getting information about a specific member:
+
+```
+GET /api/member/{member.id}
 ```
 
 Response with JSON –
@@ -20,6 +76,7 @@ Response with JSON –
   "username": "Nelly",
   "avatar": "8342729096ea3675442027381ff50dfe",
   "banner": "06c16474723fe537c283b8efa61a30c8",
+  "caption": null,
   "system": false
 }
 ```
@@ -30,10 +87,10 @@ Response with JSON message; when request is invalid –
 { "message": "404: Not Found", "code": 0 }
 ```
 
-#### API – write database contents
+#### Updating information for a specific member
 
-```js
-PATCH /api/people/{user.id}
+```
+PATCH /api/member/{member.id}
 ```
 
 Response with JSON message; when request is invalid or accepted –
@@ -50,9 +107,9 @@ Response with JSON message; when request is invalid or accepted –
 
 ## CDN
 
-#### CDN – read images
+#### Request avatars and banners
 
-```js
+```
 GET /cdn/avatar/{file.hash}
 GET /cdn/banner/{file.hash}
 ```
@@ -61,6 +118,8 @@ Response with data stream –
 Response with 404 document; when request is invalid –
 
 <br>
+
+<!--
 
 ## SQL
 
@@ -109,6 +168,8 @@ Response with 404 document; when request is invalid –
 
 <br>
 
+-->
+
 # Entity Relationship Diagram (ERM)
 
 ![designer](./assets/163166673-e31e3a55-053f-4290-95bf-999d18479dcb.png)
@@ -117,60 +178,99 @@ Response with 404 document; when request is invalid –
 
 # Relations in text notation
 
-#### TABLE_USER_USER
-
-> tableUserBanner { **id**, username, caption, joined_at, system }
+#### groups
 
 ```sql
-CREATE TABLE dauerprojekt_datenbanken.table_user (
-  id          INT               NOT NULL,
-  username    VARCHAR(32)       NOT NULL,
-  caption     VARCHAR(512)      NULL,
-  joined_at   DATE              NOT NULL,
-  system      BOOLEAN           NULL,
+CREATE TABLE srh_sql_interface.d_groups (
+  id          BIGINT            NOT NULL,
+  name        VARCHAR(128)      NOT NULL,
 
   PRIMARY KEY(id)
 );
 ```
 
-#### TABLE_USER_FILE
+#### member
 
-> tableUserBanner { **hash**, **size**, data }
+>
 
 ```sql
-CREATE TABLE dauerprojekt_datenbanken.table_file (
+CREATE TABLE srh_sql_interface.d_member (
+  id          BIGINT            NOT NULL,
+  name        VARCHAR(128)      NOT NULL,
+  caption     VARCHAR(512)      ,
+  joined_at   DATE              NOT NULL,
+  system      BOOLEAN           ,
+
+  PRIMARY KEY(id)
+);
+```
+
+#### figure
+
+>
+
+```sql
+CREATE TABLE srh_sql_interface.d_figure (
   hash        VARCHAR(32)       NOT NULL,
   size        INT               NOT NULL,
-  data        VARBINARY(256)    NOT NULL,
+  data        LONGBLOB          NOT NULL,
 
   PRIMARY KEY(hash, size)
 );
 ```
 
-#### TABLE_USER_AVATAR
+#### linking groups <-> member
 
-> tableUserAvatar { _user_, _file_ }
+>
 
 ```sql
-CREATE TABLE dauerprojekt_datenbanken.table_user_avatar (
-  user        INT               NOT NULL,
-  file        VARCHAR(32)       NOT NULL,
+CREATE TABLE srh_sql_interface.l_groups_member (
+  groups      BIGINT            NOT NULL,
+  member      BIGINT            NOT NULL,
 
-  FOREIGN KEY(user) references dauerprojekt_datenbanken.table_user(id),
-  FOREIGN KEY(file) references dauerprojekt_datenbanken.table_file(hash)
+  FOREIGN KEY(groups) references srh_sql_interface.d_groups(id),
+  FOREIGN KEY(member) references srh_sql_interface.d_member(id)
 );
 ```
 
-#### TABLE_USER_BANNER
+#### linking groups <-> avatar
 
-> tableUserBanner { _user_, _file_ }
+>
 
 ```sql
-CREATE TABLE dauerprojekt_datenbanken.table_user_banner (
-  user        INT               NOT NULL,
-  file        VARCHAR(32)       NOT NULL,
+CREATE TABLE srh_sql_interface.l_groups_avatar (
+  groups      BIGINT            NOT NULL,
+  figure      VARCHAR(32)       NOT NULL,
 
-  FOREIGN KEY(user) references dauerprojekt_datenbanken.table_user(id),
-  FOREIGN KEY(file) references dauerprojekt_datenbanken.table_file(hash)
+  FOREIGN KEY(groups) references srh_sql_interface.d_groups(id),
+  FOREIGN KEY(figure) references srh_sql_interface.d_figure(hash)
+);
+```
+
+#### linking member <-> avatar
+
+>
+
+```sql
+CREATE TABLE srh_sql_interface.l_member_avatar (
+  member      BIGINT            NOT NULL,
+  figure      VARCHAR(32)       NOT NULL,
+
+  FOREIGN KEY(member) references srh_sql_interface.d_member(id),
+  FOREIGN KEY(figure) references srh_sql_interface.d_figure(hash)
+);
+```
+
+#### linking member <-> banner
+
+>
+
+```sql
+CREATE TABLE srh_sql_interface.l_member_banner (
+  member      BIGINT            NOT NULL,
+  figure      VARCHAR(32)       NOT NULL,
+
+  FOREIGN KEY(member) references srh_sql_interface.d_member(id),
+  FOREIGN KEY(figure) references srh_sql_interface.d_figure(hash)
 );
 ```

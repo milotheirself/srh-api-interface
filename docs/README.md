@@ -18,7 +18,7 @@ Der erste Teil des Projektes behandelt das Datenbankdesign, in dem Sie beginnend
 
 - [x] [Sammlung von Inhalten / Grundkonzeption](./Teil-1/README.md#content-examples-and-project-objective)
 - [x] [Entity Relationship Diagram (ERM)](./Teil-1/README.md#entity-relationship-diagram-erm)
-- [x] [Relationenschreibweise](./Teil-1/README.md#relationenschreibweise)
+- [x] [Relationenschreibweise](./Teil-1/README.md#relations-in-text-notation)
 
 <br>
 
