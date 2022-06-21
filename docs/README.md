@@ -46,8 +46,8 @@ Der zweite Teil des Projektes dient dazu, Ihre Datenbank in ein Datenbank-Manage
 
 ### Document
 
-- [x] [Datenbank nach ERM, mit Beispieldaten](./Teil-2/README.md)
-- [ ] Bearbeitung der Aufgabenstellungen
+- [x] [Datenbank nach ERM, mit Beispieldaten](../lib/run-create.ts)
+- [x] [Bearbeitung der Aufgabenstellungen](./Teil-2/README.md#aufgabenstellungen-zu-teil-ii-erstellen-und-testen-der-datenbankstruktur)
 
 <br>
 
@@ -75,4 +75,4 @@ Anwendung beigefügt.
 
 ### Document
 
-- [ ] Implementierung
+- [ ] [Implementierung](../lib/run-stream.ts)
