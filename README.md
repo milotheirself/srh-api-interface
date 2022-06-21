@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Interface and aplication are discribed by [Teil-3/README.md](./docs/Teil-3/README.md).
+Interface and application are described by [Teil-1 (README.md)](./docs/Teil-1/README.md) and [Teil-3 (README.md)](./docs/Teil-3/README.md).
 
 ### How to run
 

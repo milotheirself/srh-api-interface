@@ -113,10 +113,10 @@ database.whenConnected().then(async () => {
   // + append default values
   await database.execute(`
     INSERT INTO ${db.name}.${db.data.member}
-      (id,                    joined_at,  username, caption, system) values
-      ('298726187285348353',  now() - INTERVAL 100 DAY,      'Alice',  '',      false ),
-      ('298726222848851970',  now(),      'Glados', '',      true  ),
-      ('298726151784759296',  now(),      'Nelly',  '',      false );
+      (id,                    joined_at,    username, caption, system) values
+      ('298726187285348353',  now(),        'Alice',  NULL,    false ),
+      ('298726222848851970',  '2022-01-01', 'Glados', NULL,    true  ),
+      ('298726151784759296',  now(),        'Nelly',  NULL,    false );
   `);
 
   await database.execute(`
@@ -148,6 +148,19 @@ database.whenConnected().then(async () => {
       ('1a9ffd58f73deb082c59b6062a607b7e',  '512',  '...'),
       ('1a9ffd58f73deb082c59b6062a607b7e',  '256',  '...'),
       ('1a9ffd58f73deb082c59b6062a607b7e',  '128',  '...');
+  `);
+
+  await database.execute(`
+    INSERT INTO ${db.name}.${db.link.groups_member}
+      (groups,                 member             ) values
+      ('298726187284621235',  '298726222848851970');
+  `);
+
+  await database.execute(`
+    INSERT INTO ${db.name}.${db.link.groups_avatar}
+      (groups,                figure                            ) values
+      ('298726187284621235',  '64d890648f7b31e8841c4441e5d8625c'),
+      ('298726222848651285',  '64d890648f7b31e8841c4441e5d8625c');
   `);
 
   await database.execute(`

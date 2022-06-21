@@ -1,0 +1,70 @@
+{
+  "images": [
+    {
+      "urn": "./lib/assets/image-01.png",
+      "hash": "64d890648f7b31e8841c4441e5d8625c",
+      "size": 512
+    },
+    {
+      "urn": "./lib/assets/image-02.png",
+      "hash": "31e5e4f2ed037db75390982312c3af9f",
+      "size": 512
+    },
+    {
+      "urn": "./lib/assets/image-03.png",
+      "hash": "70cb8c5e6af3fa1b933fe1c3ff7d41a3",
+      "size": 512
+    },
+    {
+      "urn": "./lib/assets/image-04.png",
+      "hash": "46e6b522cbf351c41de1ed1fae9ba3a2",
+      "size": 512
+    },
+    {
+      "urn": "./lib/assets/image-05.png",
+      "hash": "1a9ffd58f73deb082c59b6062a607b7e",
+      "size": 512
+    }
+  ],
+  "member": [
+    {
+      "system": null,
+      "id": 298726187285348353,
+      "joined_at": 1655239927454,
+      "avatar": "64d890648f7b31e8841c4441e5d8625c",
+      "banner": null,
+      "name": "Alice",
+      "caption": null
+    },
+    {
+      "system": true,
+      "id": 298726222848851970,
+      "joined_at": 1655239927454,
+      "avatar": "70cb8c5e6af3fa1b933fe1c3ff7d41a3",
+      "banner": "46e6b522cbf351c41de1ed1fae9ba3a2",
+      "name": "Glados",
+      "caption": "Cake and grief counseling will be available at the conclusion of the test."
+    },
+    {
+      "system": null,
+      "id": 298726151784759296,
+      "joined_at": 1655239927454,
+      "avatar": "31e5e4f2ed037db75390982312c3af9f",
+      "banner": null,
+      "name": "Nelly",
+      "caption": null
+    }
+  ],
+  "groups": [
+    {
+      "id": 953652184124391529,
+      "name": "",
+      "members": [298726187285348353, 298726151784759296]
+    },
+    {
+      "id": 953652757825462282,
+      "name": "Aperture Science",
+      "members": [298726222848851970]
+    }
+  ]
+}
