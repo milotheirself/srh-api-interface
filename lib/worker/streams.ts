@@ -23,7 +23,12 @@ fragment.connectedCallback = async () => {
     }
   };
 
-  console.log(`HTTP webserver running. Access it at: http://localhost:8080/`);
+  console.log(`
+HTTP webserver running. Access it at –
+
+  ${`http://localhost:8080/`}
+`);
+
   serve(handler, { port: 8080 });
 };
 
