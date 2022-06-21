@@ -114,8 +114,8 @@ DELETE FROM `srh_sql_interface`.`d_member`
 
 #### 10. Erstellen Sie eine Abfrage, die alle Nutzer selektiert, die keiner Gruppe zugeordnet sind.
 
-    ```sql
-    SELECT * FROM `srh_sql_interface`.`d_member`
-      LEFT JOIN `srh_sql_interface`.`l_groups_member` ON `member` = `id`
-      WHERE `member` IS NULL;
-    ```
+```sql
+SELECT * FROM `srh_sql_interface`.`d_member`
+  LEFT JOIN `srh_sql_interface`.`l_groups_member` ON `member` = `id`
+  WHERE `member` IS NULL;
+```
