@@ -9,9 +9,9 @@ streamer.connectedCallback({
 
 // database.connectedCallback({
 //   credentials: {
-//     hostname: Deno.env.get('DB_HOST'),
-//     username: Deno.env.get('DB_USER'),
-//     password: Deno.env.get('DB_PASS'),
+//     hostname: Deno.env.get('XAMPP_SDK_HOST'),
+//     username: Deno.env.get('XAMPP_SDK_USER'),
+//     password: Deno.env.get('XAMPP_SDK_PASS'),
 //   },
 // });
 
