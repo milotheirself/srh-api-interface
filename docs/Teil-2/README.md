@@ -55,8 +55,8 @@ SELECT * FROM `srh_sql_interface`.`d_figure`
 
 ```sql
 INSERT INTO `srh_sql_interface`.`d_member`
-  (`id`,                  `joined_at`,  `username`, `caption`, `system`) values
-  ('298726187285496486',  '2022-06-01', 'Dummy',    NULL,      false );
+  (`id`,                 `joined_at`,  `username`, `caption`, `system`) values
+  ('298726187285496486', '2022-06-01', 'Dummy',    NULL,      '0' );
 ```
 
 ```md
@@ -96,8 +96,8 @@ SELECT `mem`.* FROM (
 #### 5. Wie lauten die Namen der Nutzer, die sich in den letzten drei Monaten angemeldet haben?
 
 ```sql
-SELECT `username` FROM `srh_sql_interface`.`d_member`
-  WHERE `joined_at` >= ( CURDATE() - INTERVAL 90 DAY )
+SELECT `mem`.`username` FROM `srh_sql_interface`.`d_member` as `mem`
+  WHERE `mem`.`joined_at` >= ( CURDATE() - INTERVAL 90 DAY )
 ```
 
 ```md
@@ -115,9 +115,9 @@ SELECT `username` FROM `srh_sql_interface`.`d_member`
 #### 6. Ändern Sie den Datensatz, der in 3. angelegt wurde: Das Beitrittsdatum war der „01.05.2022“.
 
 ```sql
-UPDATE `srh_sql_interface`.`d_member`
-  SET `joined_at` = '2022-05-01'
-  WHERE `id` = '298726187285496486';
+UPDATE `srh_sql_interface`.`d_member` as `mem`
+  SET `mem`.`joined_at` = '2022-05-01'
+  WHERE `mem`.`id` = '298726187285496486';
 ```
 
 ```md
@@ -129,14 +129,14 @@ UPDATE `srh_sql_interface`.`d_member`
 #### 7. Selektieren Sie alle Hashwerte der zugewiesenen Gruppenavatare.
 
 ```sql
-SELECT `figure` FROM `srh_sql_interface`.`l_groups_avatar`
-  GROUP BY `figure`;
+SELECT `ava`.`figure` as 'hash' FROM `srh_sql_interface`.`l_groups_avatar` as `ava`
+  GROUP BY `ava`.`figure`;
 ```
 
 ```md
 > Showing rows 0 - 0 (1 total, Query took 0.0036 seconds.)
 
-| figure                           |
+| hash                             |
 | -------------------------------- |
 | 64d890648f7b31e8841c4441e5d8625c |
 ```
@@ -179,6 +179,10 @@ SELECT `fig`.* FROM (
 ```sql
 DELETE FROM `srh_sql_interface`.`d_member`
   WHERE `id` = '298726187285496486';
+
+-- ? I'm not sure why I can't use 'AS' here :(
+-- DELETE FROM `srh_sql_interface`.`d_member` AS `mem`
+--   WHERE `mem`.`id` = '298726187285496486';
 ```
 
 ```md
@@ -191,8 +195,8 @@ DELETE FROM `srh_sql_interface`.`d_member`
 
 ```sql
 SELECT `mem`.* FROM `srh_sql_interface`.`d_member` as `mem`
-  LEFT JOIN `srh_sql_interface`.`l_groups_member` ON `member` = `id`
-  WHERE `member` IS NULL;
+  LEFT JOIN `srh_sql_interface`.`l_groups_member` as `gro_mem` ON `gro_mem`.`member` = `mem`.`id`
+  WHERE `gro_mem`.`member` IS NULL;
 ```
 
 ```md
