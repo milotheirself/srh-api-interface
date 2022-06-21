@@ -153,7 +153,9 @@ database.whenConnected().then(async () => {
   await database.execute(`
     INSERT INTO ${db.name}.${db.link.groups_member}
       (groups,                 member             ) values
-      ('298726187284621235',  '298726222848851970');
+      ('298726187284621235',  '298726222848851970'),
+      ('298726187284621235',  '298726187285348353'),
+      ('298726222848651285',  '298726187285348353');
   `);
 
   await database.execute(`
