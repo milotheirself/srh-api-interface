@@ -115,7 +115,7 @@ database.whenConnected().then(async () => {
     INSERT INTO ${db.name}.${db.data.member}
       (id,                    joined_at,    username, caption, system) values
       ('298726187285348353',  now(),        'Alice',  NULL,    false ),
-      ('298726222848851970',  '2022-01-01', 'Glados', NULL,    true  ),
+      ('298726222848851970',  '2022-01-01', 'Glados', 'Cake and grief counseling will be available at the conclusion of the test.',    true  ),
       ('298726151784759296',  now(),        'Nelly',  NULL,    false );
   `);
 

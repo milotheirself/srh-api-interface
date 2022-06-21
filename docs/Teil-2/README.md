@@ -85,10 +85,10 @@ SELECT `mem`.* FROM (
 ```md
 > Showing rows 0 - 1 (2 total, Query took 0.0024 seconds.)
 
-| id                 | username | caption | joined_at  | system |
-| ------------------ | -------- | ------- | ---------- | ------ |
-| 298726222848851970 | Glados   | NULL    | 2022-01-01 | 1      |
-| 298726187285348353 | Alice    | NULL    | 2022-06-21 | 0      |
+| id                 | username | caption                                               | joined_at  | system |
+| ------------------ | -------- | ----------------------------------------------------- | ---------- | ------ |
+| 298726222848851970 | Glados   | Cake and grief counseling will be available at the... | 2022-01-01 | 1      |
+| 298726187285348353 | Alice    | NULL                                                  | 2022-06-21 | 0      |
 ```
 
 <br>
