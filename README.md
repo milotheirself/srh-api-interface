@@ -1,21 +1,22 @@
-# SRH Projekte, SQL-Interface
+# SRH-Projekt; SQL Datenbank
 
 ## Getting Started
 
-Interface and aplication are discribed by [Teil-3/README.md](./docs/Teil-3/README.md) in the documents.
+Interface and aplication are discribed by [Teil-3/README.md](./docs/Teil-3/README.md).
 
-### Download, install and stream
+### How to run
 
-Install the [latest version of Deno][deno:install-latest], and run the following command to set up the database:
+Install [XAMPP][xampp:install-latest] and the [latest version of Deno][deno:install-latest], and run the following command to set up the database:
 
 ```sh
 deno run -A --unstable  ./lib/run-create.ts
 ```
 
-Run the following command to start the HTTP webserver:
+Than run the following command to start the webserver:
 
 ```sh
 deno run -A --unstable  ./lib/run-stream.ts
 ```
 
+[xampp:install-latest]: https://www.apachefriends.org/download
 [deno:install-latest]: https://github.com/denoland/deno_install#install-latest-version
