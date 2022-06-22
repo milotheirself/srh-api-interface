@@ -28,25 +28,30 @@ SELECT `id`, `name` FROM `srh_sql_interface`.`d_groups`
 
 ```sql
 SELECT * FROM `srh_sql_interface`.`d_figure`
-  ORDER BY `size` DESC
+  ORDER BY LENGTH(`data`) DESC
   LIMIT 10;
+
+-- ? Wen mit "Größe" die Auflösung gemeint war:
+-- SELECT * FROM `srh_sql_interface`.`d_figure`
+--   ORDER BY `size` DESC
+--   LIMIT 10;
 ```
 
 ```md
 > Showing rows 0 - 9 (10 total, Query took 0.0022 seconds.) [size: 512... - 256...]
 
-| hash                             | size | data         |
-| -------------------------------- | ---- | ------------ |
-| 1a9ffd58f73deb082c59b6062a607b7e | 512  | [BLOB - 3 B] |
-| 31e5e4f2ed037db75390982312c3af9f | 512  | [BLOB - 3 B] |
-| 46e6b522cbf351c41de1ed1fae9ba3a2 | 512  | [BLOB - 3 B] |
-| 64d890648f7b31e8841c4441e5d8625c | 512  | [BLOB - 3 B] |
-| 70cb8c5e6af3fa1b933fe1c3ff7d41a3 | 512  | [BLOB - 3 B] |
-| 1a9ffd58f73deb082c59b6062a607b7e | 256  | [BLOB - 3 B] |
-| 31e5e4f2ed037db75390982312c3af9f | 256  | [BLOB - 3 B] |
-| 46e6b522cbf351c41de1ed1fae9ba3a2 | 256  | [BLOB - 3 B] |
-| 64d890648f7b31e8841c4441e5d8625c | 256  | [BLOB - 3 B] |
-| 70cb8c5e6af3fa1b933fe1c3ff7d41a3 | 256  | [BLOB - 3 B] |
+| hash                             | size | data          |
+| -------------------------------- | ---- | ------------- |
+| 1a9ffd58f73deb082c59b6062a607b7e | 512  | [BLOB - 35 B] |
+| 31e5e4f2ed037db75390982312c3af9f | 512  | [BLOB - 35 B] |
+| 46e6b522cbf351c41de1ed1fae9ba3a2 | 512  | [BLOB - 35 B] |
+| 64d890648f7b31e8841c4441e5d8625c | 512  | [BLOB - 35 B] |
+| 70cb8c5e6af3fa1b933fe1c3ff7d41a3 | 512  | [BLOB - 35 B] |
+| 1a9ffd58f73deb082c59b6062a607b7e | 256  | [BLOB - 27 B] |
+| 31e5e4f2ed037db75390982312c3af9f | 256  | [BLOB - 27 B] |
+| 46e6b522cbf351c41de1ed1fae9ba3a2 | 256  | [BLOB - 27 B] |
+| 64d890648f7b31e8841c4441e5d8625c | 256  | [BLOB - 27 B] |
+| 70cb8c5e6af3fa1b933fe1c3ff7d41a3 | 256  | [BLOB - 27 B] |
 ```
 
 <br>
