@@ -31,7 +31,7 @@ SELECT * FROM `srh_sql_interface`.`d_figure`
   ORDER BY LENGTH(`data`) DESC
   LIMIT 10;
 
--- ? Wen mit "Größe" die Auflösung gemeint war:
+-- ? Wenn mit "Größe" die Auflösung gemeint war:
 -- SELECT * FROM `srh_sql_interface`.`d_figure`
 --   ORDER BY `size` DESC
 --   LIMIT 10;
