@@ -201,7 +201,8 @@ DELETE FROM `srh_sql_interface`.`d_member`
 
 ```sql
 SELECT `mem`.* FROM `srh_sql_interface`.`d_member` as `mem`
-  LEFT JOIN `srh_sql_interface`.`l_groups_member` as `gro_mem` ON `gro_mem`.`member` = `mem`.`id`
+  LEFT JOIN `srh_sql_interface`.`l_groups_member` as `gro_mem`
+    ON `gro_mem`.`member` = `mem`.`id`
   WHERE `gro_mem`.`member` IS NULL;
 ```
 
