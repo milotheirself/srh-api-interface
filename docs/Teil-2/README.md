@@ -27,14 +27,15 @@ SELECT `id`, `name` FROM `srh_sql_interface`.`d_groups`
 #### 2. Selektieren Sie alle hochgeladenen Bilder (Avatare und Banner) und sortieren Sie nach der Größe der Dateien (absteigend). Begrenzen Sie die Ausgabe auf die ersten 10 Treffer.
 
 ```sql
+-- ? Sortiert nach Dateigröße
 SELECT * FROM `srh_sql_interface`.`d_figure`
   ORDER BY LENGTH(`data`) DESC
   LIMIT 10;
 
--- ? Wenn mit "Größe" die Auflösung gemeint war:
--- SELECT * FROM `srh_sql_interface`.`d_figure`
---   ORDER BY `size` DESC
---   LIMIT 10;
+-- ? Sortiert nach der Auflösung der Bilder
+SELECT * FROM `srh_sql_interface`.`d_figure`
+  ORDER BY `size` DESC
+  LIMIT 10;
 ```
 
 ```md
