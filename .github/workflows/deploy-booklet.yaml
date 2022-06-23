@@ -11,6 +11,6 @@ on:
 jobs:
   deploy:
     uses: milotheirself/booklet-actions/.github/workflows/deploy.yaml@main
-    with:
+    secrets:
       booklet_token: ${{ secrets.booklet_token }}
       booklet_cname: ${{ secrets.booklet_cname }}
