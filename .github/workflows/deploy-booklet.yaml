@@ -3,14 +3,14 @@ name: Deploy Booklet
 on:
   push:
     branches: [main]
-    # paths: [docs/**]
+    paths: [docs/**]
   pull_request:
     branches: [main]
-    # paths: [docs/**]
+    paths: [docs/**]
 
 jobs:
   deploy:
-    uses: milotheirself/booklet-actions/.github/workflows/deploy.yaml@main
+    uses: applicdev/booklet/.github/workflows/deploy.yaml@main
     secrets:
       booklet_token: ${{ secrets.booklet_token }}
       booklet_cname: ${{ secrets.booklet_cname }}
