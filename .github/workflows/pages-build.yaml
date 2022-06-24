@@ -1,4 +1,4 @@
-name: Deploy Booklet
+name: pages-build
 
 on:
   push:
