@@ -185,10 +185,6 @@ SELECT `fig`.* FROM (
 ```sql
 DELETE FROM `srh_sql_interface`.`d_member`
   WHERE `id` = '298726187285496486';
-
--- ? I'm not sure why I can't use 'AS' here :(
--- DELETE FROM `srh_sql_interface`.`d_member` AS `mem`
---   WHERE `mem`.`id` = '298726187285496486';
 ```
 
 ```md
