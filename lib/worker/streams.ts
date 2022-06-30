@@ -7,8 +7,8 @@ import { urlParse } from 'https://deno.land/x/url_parse@1.1.0/mod.ts';
 import { default as api } from './api/index.ts';
 import { default as cdn } from './cdn/index.ts';
 
-fragment.connectedCallback = async () => {
-  const handler = async (req: Request): Promise<Response> => {
+fragment.connectedCallback = () => {
+  const handler = (req: Request): Promise<Response> => {
     const loc = urlParse(req.url);
 
     switch (true) {
