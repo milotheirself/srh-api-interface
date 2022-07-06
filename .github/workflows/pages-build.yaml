@@ -9,8 +9,24 @@ on:
   # paths: [docs/**]
 
 jobs:
-  booklet:
-    uses: applicdev/booklet/.github/workflows/deploy.yaml@main
-    secrets:
-      booklet_token: ${{ secrets.booklet_token || secrets.GITHUB_TOKEN }}
-      booklet_cname: ${{ secrets.booklet_cname }}
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.20.1
+
+      - run: deno run -A --unstable packages/insterface-tools/bundle.ts
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_branch: gh-production
+          publish_dir: ./docs/.pagelet/gh-production
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_branch: gh-pages
+          publish_dir: ./docs/.pagelet/gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}

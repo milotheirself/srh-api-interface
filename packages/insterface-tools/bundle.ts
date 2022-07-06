@@ -1,7 +1,7 @@
 import { copy, emptyDir } from 'https://deno.land/std@0.78.0/fs/mod.ts';
 
 {
-  const out = './out/gh-pages';
+  const out = './docs/.pagelet/gh-pages';
   await emptyDir(`${out}`);
 
   // ? clone only statics
@@ -10,7 +10,7 @@ import { copy, emptyDir } from 'https://deno.land/std@0.78.0/fs/mod.ts';
 }
 
 {
-  const out = './out/gh-production';
+  const out = './docs/.pagelet/gh-production';
   await emptyDir(`${out}`);
 
   // ? clone statics

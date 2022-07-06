@@ -1,9 +1,7 @@
 .DS_Store
 
-# *.env
+*.draft*
+*.notes*
 
-*.draft.*
-*.notes.*
-
-.github/*-hosted
-.github/*-output
+gh-pages
+gh-production
