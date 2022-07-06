@@ -17,7 +17,7 @@ jobs:
         with:
           deno-version: v1.20.1
 
-      - run: deno run -A --unstable packages/insterface-tools/bundle.ts
+      - run: deno run -A --unstable packages/insterface-tools/run-bundle.ts
 
       - uses: peaceiris/actions-gh-pages@v3
         with:

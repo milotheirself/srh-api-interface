@@ -19,3 +19,5 @@ import { copy, emptyDir } from 'https://deno.land/std@0.78.0/fs/mod.ts';
   for await (const nod of Deno.readDir('./packages/insterface-content/page')) //
     await copy(`./packages/insterface-content/page/${nod.name}`, `${out}/${nod.name}`);
 }
+
+console.log(`[bundle] Done - ${new Date().toISOString()}`);
