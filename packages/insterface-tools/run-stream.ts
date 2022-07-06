@@ -1,13 +1,26 @@
-let tim: ReturnType<typeof setTimeout>;
-function requestBundle() {
-  clearTimeout(tim);
-  tim = setTimeout(async () => {
-    const p = Deno.run({ cmd: ['deno', 'run', '-A', '--unstable', 'packages/insterface-tools/run-bundle.ts'] });
-    await p.status();
-  }, 500);
-}
+(async () => {
+  let ser: Deno.Process;
+  let tim: ReturnType<typeof setTimeout>;
+  function requestBundle() {
+    clearTimeout(tim);
+    tim = setTimeout(async () => {
+      // ?
+      const p = Deno.run({
+        cmd: ['deno', 'run', '-A', '--unstable', 'packages/insterface-tools/run-bundle.ts'], //
+      });
+      await p.status();
 
-requestBundle();
-for await (const changes of Deno.watchFs('./packages/insterface-content')) {
+      // ?
+      if (ser) ser.kill('SIGINT');
+      ser = Deno.run({
+        cwd: 'docs/.pagelet/gh-production/',
+        cmd: ['deno', 'run', '--allow-net=:80', '--allow-read', 'index.ts'], //
+      });
+    }, 1000);
+  }
+
   requestBundle();
-}
+  for await (const changes of Deno.watchFs('./packages/insterface-content')) {
+    requestBundle();
+  }
+})();
