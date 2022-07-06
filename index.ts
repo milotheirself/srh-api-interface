@@ -21,4 +21,4 @@ app.addEventListener('listen', ({ hostname, port, secure }) => {
   console.log(`Listening on: ${secure ? 'https://' : 'http://'}${hostname ?? 'localhost'}:${port}`);
 });
 
-await app.listen('localhost:80');
+await app.listen('localhost:443');
