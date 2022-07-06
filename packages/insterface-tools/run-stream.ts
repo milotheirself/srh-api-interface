@@ -14,7 +14,7 @@
       if (ser) ser.kill('SIGINT');
       ser = Deno.run({
         cwd: 'docs/.pagelet/gh-production/',
-        cmd: ['deno', 'run', '--allow-net=:80', '--allow-read', 'index.ts'], //
+        cmd: ['deno', 'run', '--allow-net=:443', '--allow-read=./', 'index.ts'], //
       });
     }, 1000);
   }
