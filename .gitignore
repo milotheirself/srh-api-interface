@@ -1,9 +1,0 @@
-.DS_Store
-
-# *.env
-
-*.draft.*
-*.notes.*
-
-.github/*-hosted
-.github/*-output
