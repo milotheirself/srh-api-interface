@@ -1,6 +1,7 @@
 (async () => {
   let ser: Deno.Process;
   let tim: ReturnType<typeof setTimeout>;
+
   function requestBundle() {
     clearTimeout(tim);
     tim = setTimeout(async () => {
@@ -20,7 +21,7 @@
   }
 
   requestBundle();
-  for await (const changes of Deno.watchFs('./packages/insterface-content')) {
+  for await (const _ of Deno.watchFs('./packages/insterface-content')) {
     requestBundle();
   }
 })();
