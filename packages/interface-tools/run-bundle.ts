@@ -14,8 +14,8 @@ import { copy, emptyDir } from 'https://deno.land/std@0.78.0/fs/mod.ts';
   await emptyDir(`${out}`);
 
   // ? clone statics
-  for await (const nod of Deno.readDir('./packages/interface')) //
-    await copy(`./packages/interface/${nod.name}`, `${out}/${nod.name}`);
+  for await (const nod of Deno.readDir('./packages/interface-content/lib')) //
+    await copy(`./packages/interface-content/lib/${nod.name}`, `${out}/${nod.name}`);
   for await (const nod of Deno.readDir('./packages/interface-content/page')) //
     await copy(`./packages/interface-content/page/${nod.name}`, `${out}/${nod.name}`);
 }
