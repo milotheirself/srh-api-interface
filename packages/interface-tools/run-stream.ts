@@ -7,7 +7,7 @@ function requestBundle() {
   tim = setTimeout(async () => {
     // ?
     const p = Deno.run({
-      cmd: ['deno', 'run', '-A', '--unstable', 'packages/insterface-tools/run-bundle.ts'], //
+      cmd: ['deno', 'run', '-A', '--unstable', 'packages/interface-tools/run-bundle.ts'], //
     });
     await p.status();
 
@@ -21,6 +21,6 @@ function requestBundle() {
 }
 
 requestBundle();
-for await (const _ of Deno.watchFs('./packages/insterface-content')) {
+for await (const _ of Deno.watchFs('./packages/interface-content')) {
   requestBundle();
 }

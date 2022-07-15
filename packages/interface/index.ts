@@ -3,7 +3,7 @@ import staticFiles from 'https://deno.land/x/static_files@1.1.6/mod.ts';
 import { resolve } from 'https://deno.land/std@0.146.0/path/mod.ts';
 
 async function notFound(context: Context) {
-  context.response.status = 404;
+  context.response.status = Status.NotFound;
   context.response.type = 'text/html';
   context.response.body = await Deno.readTextFile(resolve(Deno.cwd(), './404.html'));
 }
@@ -78,7 +78,10 @@ app.use(notFound);
 
 // ? listen
 app.addEventListener('listen', ({ hostname, port, secure }) => {
-  console.log('[stream]', `Listening on: ${secure ? 'https://' : 'http://'}${hostname ?? 'localhost'}:${port}`);
+  console.log(
+    '[stream]', //
+    `Listening on: ${secure ? 'https://' : 'http://'}${hostname ?? 'localhost'}:${port}`
+  );
 });
 
 await app.listen({ port: 443 });
